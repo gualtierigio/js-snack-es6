@@ -7,11 +7,22 @@ let a = 3;
 
 let b = 12;
 
-numbers1To20.forEach(element => {
+function composeArray(totNmbers,numA,numB){
+
     numbersRange = [];
-   
-    numbersRange.push(element > a && element < b)
- 
-});
+
+    totNmbers.forEach(element => {
+       
+        numbersRange.push(element > numA && element < numB);
+
+        if ()
+     
+    });
+
+    return numbersRange
+
+};
+
+composeArray(numbers1To20,a,b)
 
 console.log(numbersRange);
