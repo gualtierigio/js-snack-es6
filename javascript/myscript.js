@@ -13,9 +13,8 @@ function composeArray(totNmbers,numA,numB){
 
     totNmbers.forEach(element => {
        
-        
-
-        if (element > numA && element < numB){
+    
+        if (element >= numA && element <= numB){
             numbersRange.push(element)
         }
      
@@ -28,3 +27,9 @@ function composeArray(totNmbers,numA,numB){
 composeArray(numbers1To20,a,b)
 
 console.log(numbersRange);
+
+
+const filterRange = numbers1To20.filter(element =>  element >= a && element <= b)
+
+console.log(filterRange);
+
