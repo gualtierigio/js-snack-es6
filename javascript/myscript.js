@@ -13,9 +13,11 @@ function composeArray(totNmbers,numA,numB){
 
     totNmbers.forEach(element => {
        
-        numbersRange.push(element > numA && element < numB);
+        
 
-        if ()
+        if (element > numA && element < numB){
+            numbersRange.push(element)
+        }
      
     });
 
