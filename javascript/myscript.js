@@ -7,9 +7,10 @@ let a = 3;
 
 let b = 12;
 
+numbersRange = [];
+
 function composeArray(totNmbers,numA,numB){
 
-    numbersRange = [];
 
     totNmbers.forEach(element => {
        
