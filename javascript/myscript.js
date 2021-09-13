@@ -116,7 +116,7 @@ function printToPage(array, container){
         const {name, prefix, type, family, color} = element;
 
         temporaryHTML += 
-        `<div>
+        `<div class="col-3 box-style">
             <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
             <h4 class"my_icon-title">${name} (${type})</h4>
         </div>`

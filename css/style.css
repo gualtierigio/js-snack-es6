@@ -26,3 +26,16 @@
 header div h3 {
     display: inline-block;
 }
+
+.box-style{
+    background-color: rgb(245, 159, 61);
+    border-radius: 8px;
+    border: 1px solid black;
+    display: inline-block;
+    padding: 10px 10px;
+    text-align: center;
+}
+
+i{
+    font-size: 3em;
+}
