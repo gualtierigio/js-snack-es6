@@ -1,36 +1,99 @@
-
-
-
-const numbers1To20 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
-
-let a = 3;
-
-let b = 12;
-
-numbersRange = [];
-
-function composeArray(totNmbers,numA,numB){
-
-
-    totNmbers.forEach(element => {
-       
-    
-        if (element >= numA && element <= numB){
-            numbersRange.push(element)
-        }
-     
-    });
-
-    return numbersRange
-
-};
-
-composeArray(numbers1To20,a,b)
-
-console.log(numbersRange);
-
-
-const filterRange = numbers1To20.filter(element =>  element >= a && element <= b)
-
-console.log(filterRange);
+const icons = 
+    [{
+		name: 'cat',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'crow',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'dog',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'dove',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'dragon',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'horse',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'hippo',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'fish',
+		prefix: 'fa-',
+		type: 'animal',
+		family: 'fas'
+	},
+	{
+		name: 'carrot',
+		prefix: 'fa-',
+		type: 'vegetable',
+		family: 'fas'
+	},
+	{
+		name: 'apple-alt',
+		prefix: 'fa-',
+		type: 'vegetable',
+		family: 'fas'
+	},
+	{
+		name: 'lemon',
+		prefix: 'fa-',
+		type: 'vegetable',
+		family: 'fas'
+	},
+	{
+		name: 'pepper-hot',
+		prefix: 'fa-',
+		type: 'vegetable',
+		family: 'fas'
+	},
+	{
+		name: 'user-astronaut',
+		prefix: 'fa-',
+		type: 'user',
+		family: 'fas'
+	},
+	{
+		name: 'user-graduate',
+		prefix: 'fa-',
+		type: 'user',
+		family: 'fas'
+	},
+	{
+		name: 'user-ninja',
+		prefix: 'fa-',
+		type: 'user',
+		family: 'fas'
+	},
+	{
+		name: 'user-secret',
+		prefix: 'fa-',
+		type: 'user',
+		family: 'fas'
+	}
+];
 

@@ -1,0 +1,24 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.my-lightblue{
+    color: lightblue;
+}
+
+.my-white{
+    color: white;
+}
+
+.uppercase{
+    text-transform: uppercase;
+}
+
+.bg-header{
+    background-color: turquoise;
+    height: 70px;
+    padding: 20px;
+    text-align: center;
+}
