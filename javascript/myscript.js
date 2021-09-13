@@ -98,7 +98,8 @@ const icons =
 ];
 
 let container = document.querySelector(".my_icon-box");
-console.log(container);
+
+const colors = ['magenta', 'lime', 'turquoise', 'teal', 'blue']
 
 
 
@@ -106,11 +107,11 @@ function printToPage(array, container){
     let htmlContent = '';
 
     array.forEach(element => {
-        const {name, prefix, type, family} = element;
+        const {name, prefix, type, family, color} = element;
 
         htmlContent += 
         `<div>
-            <i class="${family} ${prefix}${name}"></i>
+            <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
             <h4 class"my_icon-title">${name} (${type})</h4>
         </div>`
     });
@@ -119,3 +120,31 @@ function printToPage(array, container){
 };
 
 printToPage(icons, container);
+
+function getProprietyOfArrayObject(array, propriety){
+    const types = [];
+
+    array.forEach((element) => {
+        if(! types.includes(element[propriety])){
+            types.push(element[propriety]);
+        }
+    });
+    return types
+};
+
+function colorMyItems(array, colors){
+    const types = getProprietyOfArrayObject(array, "type");
+
+    const colorMyArray = array.map((element) => {
+        const indexOfType = types.indexOf(element.type)
+        if (indexOfType !== -1){
+            element.color = colors[indexOfType];
+        };
+        return element;
+    });
+    return colorMyArray
+};
+
+colorMyItems = colorMyItems(icons, colors);
+
+printToPage(colorMyItems, container);
