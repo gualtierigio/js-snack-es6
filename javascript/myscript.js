@@ -99,7 +99,13 @@ const icons =
 
 let container = document.querySelector(".my_icon-box");
 
-const colors = ['magenta', 'lime', 'turquoise', 'teal', 'blue']
+const colors = ['magenta', 'lime', 'turquoise', 'teal', 'blue'];
+
+const select = document.getElementById("type-of");
+
+const types = getProprietyOfArrayObject(icons, "type");
+
+addOption(types, select);
 
 
 
@@ -148,3 +154,23 @@ function colorMyItems(array, colors){
 colorMyItems = colorMyItems(icons, colors);
 
 printToPage(colorMyItems, container);
+
+function addOption(option, select){
+    option.forEach((element) => {
+        select.innerHTML += `<option valur="${element}">${element}</option>`;
+    });
+};
+
+select.addEventListener('change', () => {
+    const selectValue = select.value;
+
+    const filteredIcons = filterElemenets(icons, selectValue);
+});
+
+function filterItems(array, filter){
+    if (filter.trim().toLowerCase() === 'all'){
+        return array;
+    };
+
+        return  array.filter((element) => element.type == filter);
+};
