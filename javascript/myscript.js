@@ -110,19 +110,19 @@ addOption(types, select);
 
 
 function printToPage(array, container){
-    let htmlContent = '';
+    let temporaryHTML = '';
 
     array.forEach(element => {
         const {name, prefix, type, family, color} = element;
 
-        htmlContent += 
+        temporaryHTML += 
         `<div>
             <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
             <h4 class"my_icon-title">${name} (${type})</h4>
         </div>`
     });
 
-    container.innerHTML = htmlContent;
+    container.innerHTML = temporaryHTML;
 };
 
 printToPage(icons, container);
@@ -164,7 +164,9 @@ function addOption(option, select){
 select.addEventListener('change', () => {
     const selectValue = select.value;
 
-    const filteredIcons = filterElemenets(icons, selectValue);
+    const filteredIcons = filterItems(icons, selectValue);
+
+    printToPage(filteredIcons, container);
 });
 
 function filterItems(array, filter){
