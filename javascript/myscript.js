@@ -97,3 +97,25 @@ const icons =
 	}
 ];
 
+let container = document.querySelector(".my_icon-box");
+console.log(container);
+
+
+
+function printToPage(array, container){
+    let htmlContent = '';
+
+    array.forEach(element => {
+        const {name, prefix, type, family} = element;
+
+        htmlContent += 
+        `<div>
+            <i class="${family} ${prefix}${name}"></i>
+            <h4 class"my_icon-title">${name} (${type})</h4>
+        </div>`
+    });
+
+    container.innerHTML = htmlContent;
+};
+
+printToPage(icons, container);
