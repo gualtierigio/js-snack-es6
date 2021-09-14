@@ -1,178 +1,36 @@
-const icons = 
-    [{
-		name: 'cat',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'crow',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'dog',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'dove',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'dragon',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'horse',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'hippo',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'fish',
-		prefix: 'fa-',
-		type: 'animal',
-		family: 'fas'
-	},
-	{
-		name: 'carrot',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'apple-alt',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'lemon',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'pepper-hot',
-		prefix: 'fa-',
-		type: 'vegetable',
-		family: 'fas'
-	},
-	{
-		name: 'user-astronaut',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	},
-	{
-		name: 'user-graduate',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	},
-	{
-		name: 'user-ninja',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	},
-	{
-		name: 'user-secret',
-		prefix: 'fa-',
-		type: 'user',
-		family: 'fas'
-	}
-];
-
-let container = document.querySelector(".my_icon-box");
-
-const colors = ['magenta', 'lime', 'turquoise', 'teal', 'blue'];
-
-const select = document.getElementById("type-of");
-
-const types = getProprietyOfArrayObject(icons, "type");
-
-addOption(types, select);
 
 
 
-function printToPage(array, container){
-    let temporaryHTML = '';
+const numbers1To20 = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20];
 
-    array.forEach(element => {
-        const {name, prefix, type, family, color} = element;
+let a = 3;
 
-        temporaryHTML += 
-        `<div class="col-3 box-style">
-            <i class="${family} ${prefix}${name}" style="color: ${color}"></i>
-            <h4 class"my_icon-title">${name} (${type})</h4>
-        </div>`
-    });
+let b = 12;
 
-    container.innerHTML = temporaryHTML;
-};
+numbersRange = [];
 
-printToPage(icons, container);
+function composeArray(totNmbers,numA,numB){
 
-function getProprietyOfArrayObject(array, propriety){
-    const types = [];
 
-    array.forEach((element) => {
-        if(! types.includes(element[propriety])){
-            types.push(element[propriety]);
+    totNmbers.forEach(element => {
+       
+    
+        if (element >= numA && element <= numB){
+            numbersRange.push(element)
         }
+     
     });
-    return types
+
+    return numbersRange
+
 };
 
-function colorMyItems(array, colors){
-    const types = getProprietyOfArrayObject(array, "type");
+composeArray(numbers1To20,a,b)
 
-    const colorMyArray = array.map((element) => {
-        const indexOfType = types.indexOf(element.type)
-        if (indexOfType !== -1){
-            element.color = colors[indexOfType];
-        };
-        return element;
-    });
-    return colorMyArray
-};
+console.log(numbersRange);
 
-colorMyItems = colorMyItems(icons, colors);
 
-printToPage(colorMyItems, container);
+const filterRange = numbers1To20.filter(element =>  element >= a && element <= b)
 
-function addOption(option, select){
-    option.forEach((element) => {
-        select.innerHTML += `<option valur="${element}">${element}</option>`;
-    });
-};
+console.log(filterRange);
 
-select.addEventListener('change', () => {
-    const selectValue = select.value;
-
-    const filteredIcons = filterItems(icons, selectValue);
-
-    printToPage(filteredIcons, container);
-});
-
-function filterItems(array, filter){
-    if (filter.trim().toLowerCase() === 'all'){
-        return array;
-    };
-
-        return  array.filter((element) => element.type == filter);
-};
